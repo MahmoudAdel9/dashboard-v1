@@ -6,12 +6,13 @@ import SvgColor from 'src/components/svg-color';
 
 function DarkModeToggle() {
   const { isDarkMode, toggleMode } = useDarkMode();
+  const imagePath = isDarkMode
+    ? '../../../../public/assets/icons/navbar/sun.svg'
+    : '../../../../public/assets/icons/navbar/moon.svg';
   return (
     <div>
       <IconButton onClick={toggleMode}>
-        <SvgColor
-          src={`../../../../public/assets/icons/navbar/${isDarkMode ? 'sun' : 'moon'}.svg`}
-        />
+        <SvgColor src={imagePath} />
       </IconButton>
     </div>
   );
