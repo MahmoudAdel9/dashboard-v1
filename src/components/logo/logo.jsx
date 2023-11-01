@@ -25,7 +25,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   const { isDarkMode } = useDarkMode();
 
   const logoPath = isDarkMode
-    ? '../../../public/assets/icons/ic_flag_ar.svg'
+    ? '../../../public/assets/logo.png'
     : '../../../public/assets/logo-black.png';
   const logo = (
     <Box component="img" src={logoPath} sx={{ width: 140, height: 40, cursor: 'pointer', ...sx }} />
