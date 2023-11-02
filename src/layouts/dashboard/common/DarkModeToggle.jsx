@@ -1,14 +1,17 @@
-import { Box, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 
 import { useDarkMode } from 'src/theme/DarkModeContext';
 
 function DarkModeToggle() {
   const { isDarkMode, toggleMode } = useDarkMode();
-  const imagePath = isDarkMode ? '/assets/icons/ic_sun.svg' : '/assets/icons/ic_moon.svg';
   return (
     <div>
       <IconButton onClick={toggleMode}>
-        <Box component="img" alt="dark-mode" src={imagePath} sx={{ width: 28 }} />
+        {isDarkMode ? (
+          <img src="/assets/icons/ic_sun.svg" alt="light-mode-icon" width={25} height={25} />
+        ) : (
+          <img src="/assets/icons/ic_moon.svg" alt="dark-mode-icon" width={25} height={25} />
+        )}
       </IconButton>
     </div>
   );

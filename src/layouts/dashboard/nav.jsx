@@ -15,7 +15,6 @@ import { RouterLink } from 'src/routes/components';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 
-import { palette } from 'src/theme/palette';
 import { account } from 'src/_mock/account';
 
 import Logo from 'src/components/logo';
