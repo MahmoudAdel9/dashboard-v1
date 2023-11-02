@@ -144,6 +144,7 @@ export default function Nav({ openNav, onCloseNav }) {
           onClose={onCloseNav}
           PaperProps={{
             sx: {
+              backgroundColor: theme.palette.mode === 'dark' ? '#010716' : '',
               width: NAV.WIDTH,
             },
           }}

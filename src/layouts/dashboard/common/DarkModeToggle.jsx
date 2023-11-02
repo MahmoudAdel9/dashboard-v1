@@ -7,8 +7,8 @@ import SvgColor from 'src/components/svg-color';
 function DarkModeToggle() {
   const { isDarkMode, toggleMode } = useDarkMode();
   const imagePath = isDarkMode
-    ? '../../../../public/assets/icons/navbar/ic_disabled.svg'
-    : '../../../../public/assets/icons/navbar/ic_user.svg';
+    ? '/public/assets/icons/navbar/sun.svg'
+    : '/public/assets/icons/navbar/moon.svg';
   return (
     <div>
       <IconButton onClick={toggleMode}>
