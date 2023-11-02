@@ -10,7 +10,7 @@ function DarkModeToggle() {
   return (
     <div>
       <IconButton onClick={toggleMode}>
-        <img src="/public/assets/icons/navbar/sun.svg" alt="dark-mode" width={25} height={25} />
+        <img src="/public/assets/icons/navbar/ic_sun.svg" alt="dark-mode" width={25} height={25} />
       </IconButton>
     </div>
   );
