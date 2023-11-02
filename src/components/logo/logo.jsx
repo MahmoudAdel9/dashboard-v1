@@ -14,27 +14,31 @@ import { useDarkMode } from 'src/theme/DarkModeContext';
 const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   const { isDarkMode } = useDarkMode();
 
-  const logo = isDarkMode ? (
-    <Box
-      component="img"
-      src="../assets/logo.png"
-      sx={{ width: 140, height: 40, cursor: 'pointer', ...sx }}
-    />
-  ) : (
-    <Box
-      component="img"
-      src="../assets/logo-black.png"
-      sx={{ width: 140, height: 40, cursor: 'pointer', ...sx }}
-    />
-  );
-
-  if (disabledLink) {
-    return logo;
-  }
+  // if (disabledLink) {
+  //   return (
+  //     <Box
+  //       component="img"
+  //       src="../assets/logo.png"
+  //       sx={{ width: 140, height: 40, cursor: 'pointer', ...sx }}
+  //     />
+  //   );
+  // }
 
   return (
     <Link component={RouterLink} href="/" sx={{ display: 'contents' }}>
-      {logo}
+      {isDarkMode ? (
+        <Box
+          component="img"
+          src="../assets/logo.png"
+          sx={{ width: 140, height: 40, cursor: 'pointer', ...sx }}
+        />
+      ) : (
+        <Box
+          component="img"
+          src="../assets/logo-black.png"
+          sx={{ width: 140, height: 40, cursor: 'pointer', ...sx }}
+        />
+      )}
     </Link>
   );
 });
