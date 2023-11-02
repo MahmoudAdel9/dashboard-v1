@@ -4,13 +4,11 @@ import { useDarkMode } from 'src/theme/DarkModeContext';
 
 function DarkModeToggle() {
   const { isDarkMode, toggleMode } = useDarkMode();
-  // const imagePath = isDarkMode
-  //   ? '/public/assets/icons/navbar/sun.svg'
-  //   : '/public/assets/icons/navbar/moon.svg';
+  const imagePath = isDarkMode ? '/assets/icons/ic_sun.svg' : '/assets/icons/ic_moon.svg';
   return (
     <div>
       <IconButton onClick={toggleMode}>
-        <img src="/public/assets/icons/navbar/ic_sun.svg" alt="dark-mode" width={25} height={25} />
+        <Box component="img" alt="dark-mode" src={imagePath} sx={{ width: 28 }} />
       </IconButton>
     </div>
   );
