@@ -4,7 +4,7 @@ import { grey, info, error, common, primary, success, warning, secondary } from 
 
 // ----------------------------------------------------------------------
 
-export function customShadows() {
+export function customShadows(isDarkMode) {
   const transparent = alpha(grey[500], 0.16);
 
   return {
@@ -16,7 +16,10 @@ export function customShadows() {
     z20: `0 20px 40px -4px ${transparent}`,
     z24: `0 24px 48px 0 ${transparent}`,
     //
-    card: `0px 0px 0px 1px ${'#ddd'}`,
+    card: isDarkMode
+      ? `rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    `
+      : `rgba(0, 0, 0, 0.24) 0px 3px 8px;`,
     // card: `0 0 2px 0 ${alpha(grey[500], 0.08)}, 0 12px 24px -4px ${alpha(grey[500], 0.08)}`,
     dropdown: `0 0 2px 0 ${alpha(grey[500], 0.24)}, -20px 20px 40px -4px ${alpha(grey[500], 0.24)}`,
     dialog: `-40px 40px 80px -8px ${alpha(common.black, 0.24)}`,

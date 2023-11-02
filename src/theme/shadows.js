@@ -4,11 +4,12 @@ import { grey } from './palette';
 
 // ----------------------------------------------------------------------
 
-export function shadows() {
+export function shadows(isDarkMode) {
   const transparent1 = alpha(grey[500], 0.2);
   const transparent2 = alpha(grey[500], 0.14);
   const transparent3 = alpha(grey[500], 0.12);
 
+  if (isDarkMode) return ['none'];
   return [
     'none',
     `0px 2px 1px -1px ${transparent1},0px 1px 1px 0px ${transparent2},0px 1px 3px 0px ${transparent3}`,

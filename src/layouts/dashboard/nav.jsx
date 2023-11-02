@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useTheme } from '@emotion/react';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -14,6 +15,7 @@ import { RouterLink } from 'src/routes/components';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 
+import { palette } from 'src/theme/palette';
 import { account } from 'src/_mock/account';
 
 import Logo from 'src/components/logo';
@@ -26,6 +28,7 @@ import navConfig from './config-navigation';
 
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
+  const theme = useTheme();
 
   const upLg = useResponsive('up', 'lg');
 
@@ -46,7 +49,7 @@ export default function Nav({ openNav, onCloseNav }) {
         display: 'flex',
         borderRadius: 1.5,
         alignItems: 'center',
-        bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
+        bgcolor: (them) => alpha(them.palette.grey[500], 0.12),
       }}
     >
       <Avatar src={account.photoURL} alt="photoURL" />
@@ -122,10 +125,15 @@ export default function Nav({ openNav, onCloseNav }) {
       {upLg ? (
         <Box
           sx={{
+            backgroundColor: theme.palette.background.paper,
+            boxShadow:
+              theme.palette.mode === 'dark'
+                ? '0px 0px 5px rgba(0, 0, 0, 0.5)'
+                : '0px 0px 5px rgba(0, 0, 0, 0.2)',
             height: 1,
             position: 'fixed',
             width: NAV.WIDTH,
-            borderRight: (theme) => `dashed 1px ${theme.palette.divider}`,
+            borderRight: (them) => `dashed 1px ${them.palette.divider}`,
           }}
         >
           {renderContent}

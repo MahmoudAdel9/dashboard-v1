@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import { useResponsive } from 'src/hooks/use-responsive';
 
 import { bgBlur } from 'src/theme/css';
+// import { palette } from 'src/theme/palette';
 
 import Iconify from 'src/components/iconify';
 
@@ -52,6 +53,7 @@ export default function Header({ onOpenNav }) {
     <AppBar
       sx={{
         boxShadow: 'none',
+
         height: HEADER.H_MOBILE,
         zIndex: theme.zIndex.appBar + 1,
         ...bgBlur({
@@ -69,6 +71,11 @@ export default function Header({ onOpenNav }) {
       <Toolbar
         sx={{
           height: 1,
+          backgroundColor: theme.palette.background.paper,
+          boxShadow:
+            theme.palette.mode === 'dark'
+              ? '5px 1px 5px rgba(0, 0, 0, 0.5)'
+              : '5px 1px 5px rgba(0, 0, 0, 0.2)',
           px: { lg: 5 },
         }}
       >

@@ -1,7 +1,8 @@
 import { IconButton } from '@mui/material';
-import SvgIcon from '@mui/material/SvgIcon';
 
 import { useDarkMode } from 'src/theme/DarkModeContext';
+
+import SvgColor from 'src/components/svg-color';
 
 function DarkModeToggle() {
   const { isDarkMode, toggleMode } = useDarkMode();
@@ -11,7 +12,7 @@ function DarkModeToggle() {
   return (
     <div>
       <IconButton onClick={toggleMode}>
-        <img alt="dark-mode" src={imagePath} width={25} height={25} />
+        <SvgColor src={imagePath} />
       </IconButton>
     </div>
   );

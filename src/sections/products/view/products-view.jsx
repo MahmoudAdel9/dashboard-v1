@@ -27,7 +27,7 @@ export default function ProductsView() {
 
   return (
     <Container>
-      <Typography variant="h4" sx={{ mb: 5 }}>
+      <Typography variant="h4" sx={{ mt: 2, mb: 5 }}>
         Products
       </Typography>
 

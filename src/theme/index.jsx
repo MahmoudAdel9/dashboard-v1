@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider as MUIThemeProvider } from '@mui/material/st
 
 // import { palette } from './palette';
 import { shadows } from './shadows';
+import { palette } from './palette';
 import { overrides } from './overrides';
 import { typography } from './typography';
 import { useDarkMode } from './DarkModeContext';
@@ -19,13 +20,13 @@ export default function ThemeProvider({ children }) {
 
   const memoizedValue = useMemo(
     () => ({
-      palette: {
-        mode: isDarkMode ? 'dark' : 'light',
-      },
-      // palette: palette(mode),
+      // palette: {
+      //   mode: isDarkMode ? 'dark' : 'light',
+      // },
+      palette: palette(isDarkMode),
       typography,
-      shadows: shadows(),
-      customShadows: customShadows(),
+      shadows: shadows(isDarkMode),
+      customShadows: customShadows(isDarkMode),
       shape: { borderRadius: 8 },
     }),
     [isDarkMode]

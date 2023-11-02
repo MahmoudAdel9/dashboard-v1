@@ -6,7 +6,8 @@ import { alpha } from '@mui/material/styles';
 
 export const grey = {
   0: '#FFFFFF',
-  100: '#F9FAFB',
+  50: '#f9fafb',
+  100: '#f3f4f6',
   200: '#F4F6F8',
   300: '#DFE3E8',
   400: '#C4CDD5',
@@ -14,7 +15,7 @@ export const grey = {
   600: '#637381',
   700: '#454F5B',
   800: '#212B36',
-  900: '#161C24',
+  900: '#111827',
 };
 
 export const primary = {
@@ -101,7 +102,28 @@ const base = {
 
 // ----------------------------------------------------------------------
 
-export function palette() {
+export function palette(isDarkMode) {
+  if (isDarkMode) {
+    return {
+      ...base,
+      mode: 'dark',
+      text: {
+        primary: grey[50], // White text for dark mode
+        secondary: grey[400], // Light gray for secondary text
+        disabled: grey[500], // Medium gray for disabled text
+      },
+      background: {
+        paper: '#18212f', // Background for paper components (if needed)
+        default: '#111827', // Dark blue background
+        neutral: '#111825', // Darker shade of blue for neutral background
+      },
+      action: {
+        ...base.action,
+        active: grey[600],
+      },
+    };
+  }
+
   return {
     ...base,
     mode: 'light',

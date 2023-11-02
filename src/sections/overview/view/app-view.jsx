@@ -21,7 +21,7 @@ import AppConversionRates from '../app-conversion-rates';
 export default function AppView() {
   return (
     <Container maxWidth="xl">
-      <Typography variant="h4" sx={{ mb: 5 }}>
+      <Typography variant="h4" sx={{ mt: 2, mb: 5 }}>
         Hi, Welcome back 👋
       </Typography>
 
